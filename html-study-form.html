@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h2>form teg의 속성</h2>
+        <li> action : 입력한 정보를 제출할 곳(http://localhost/login.php--사용하는컴퓨터)</li>
+        <li>method="get" 입력한 값이 주소창에 보여주며 url로 전송</li>
+        <li>method="post" 입력한 값이 주소창에 보여주지 않고 숨겨서 전송(일반적방법)</li>
+        <li> label : 이름표. label for 와 input id의 id를 같이주어 짝을지어준다</li>
+        <li> input : 정보입력</li>
+        <li> label로 묶어주고 label의 text를  클릭해도 자동으로 커서가 input 으로 간다</li>
+        <li>autocomplete=on (자동완성기능이 on 예:입력해놓은 비번이나 id가 자동으로 보여진다)</li>
+        
+     <h2>input teg의 속성</h2>
+        <li>placeholder(input teg 안에 표시되는 것)</li>
+        <li>autofocus  (화면이 켜졌을데 자동으로 커서가 이곳에 위치)</li>
+        <li>required   (반드시 입력)</li>
+        <li>pattern    ([]-입력형식 명명, [.] 문자, [.+] 하나이상의 문자)</li>
+        <li>pattern="[a-zA-Z].+[0-9]" (첫번째 반드시 알파벳문자,중간-하나이상의 아무문자,마지막에 반드시 숫자)</li>
+        
+    <h3>textarea : 여러줄의 택스트를 입력</h3> 
+        
+        <form class="" action="http://localhost/login.php" method="post" autocomplete="on">
+              <p>
+                <label for="id_txt">아이디</label>
+                <label for="id_txt1">:</label>
+                <input id="id_txt" type="text" name="id" value="" 
+                       placeholder="id입력" autofocus required >
+              </p>
+              <p>
+                <label for="pws_txt">비밀번호</label>
+                <input id="pws_txt" type="password" name="pws" value="">
+<!--                       placeholder="********" autocomplete="off"-->
+<!--                       pattern="[a-zA-Z][a-zA-Z].+[0-9]">sfddf-->
+              </p>
+              <p>
+                <label for="add_txt">주  소</label>
+                <textarea id="add_txt" name="add" rows="2" cols="80">textarea는 여러줄의 text 입력받는것</textarea>
+              </p>
+              
+             
+              <br>
+              
+              나이  <input type="number" name="age" min="10" max="15">  
+              날짜  <input type="date" name="datev" value=""><br>
+              월    <input type="month" name="monthv" value=""><br>
+              주    <input type="week" name="wookv" value=""><br>
+              시간  <input type="time" name="timev" value=""><br>
+              메일  <input type="email" name="emailv" value=""><br>
+              검색  <input type="search" name="searchv" value=""><br>
+              전화  <input type="tel" name="telv" value=""><br>
+              url  <input type="url" name="urlv" value=""><br>
+                   <input type="range" name="rangev" value="" min="0"max="10"><br>
+              <input type="submit" name="" value="제출">
+         </form>
+       
+    <h2>drop down list </h2>
+       <li>form>select>option : select (option box 생성) </li>
+       <li>select 속성 : muultiple (ctrl키 누르고 다중선택) </li>
+       
+        <form class="" action="http://localhost/color.php" method="post">
+              <h4>단일선택</h4>
+                  <select class="" name="color">
+                    <option value="gray">회  색</option>
+                    <option value="green">연두색</option>
+                    <option value="black">검은색</option>
+                  </select>
+                  <input type="submit">
+
+              <h4>다중선택(+ctrl)</h4>
+                  <select class="" name="color2" multiple> 
+                    <option value="gray">회  색</option>
+                    <option value="green">연두색</option>
+                    <option value="black">검은색</option>
+                  </select>
+                  <input type="submit">
+         </form>
+         
+     <h2>radio button 과 check box 속성</h2>
+        <li>label로 text 와 input을 감싸면 text를 눌러도 버튼클릭 </li> 
+         
+          <form action="http://localhost/order.php">
+              <table border="1">  
+               <tr>   
+                  <td> radio button </td>  <td>  check box   </td>    
+               </tr>
+               <tr>
+                  <td>단일선택 </td>  <td>다중선택</td>  
+               </tr>
+                <tr>
+                  <td>name 값이 같은것끼리 grouping 된다</td>  
+               </tr>
+                <tr>
+                  <td>checked : check 되어 보여진다 </td>  
+               </tr>
+               <tr>
+                  <td> 색상 </td>  <td>사이즈</td>  
+               </tr>
+               <tr>
+                  <td> 
+                    <label for="col-red">붉은색 : </label>
+                    <input id="col-red" type="radio" name="color" value="red"> 
+                      
+                    <label for="col-black">검은색 : </label> 
+                    <input id="col-black" type="radio" name="color" value="black" checked>
+                       
+                    <label for="col-blue">파란색 :  </label>
+                    <input id="col-blue" type="radio" name="color" value="blue">
+                   </td>
+                   
+                   <label>
+                   <td> 95  : <input type="checkbox" name="size" value="95">
+                        100 : <input type="checkbox" name="size" value="100" checked>
+                        105 : <input type="checkbox" name="size" value="105" checked>
+                   </td> 
+                   </label>
+               </tr>
+            </table>
+         <input type="submit">
+        </form>
+
+     <h2>button 속성</h2>
+        <li>submit :클릭하면 입력한정보를 서버로전송 후 페이지 바뀜</li>
+        <li>button :입력값의 ui 만듬. 자바언어사용시 사용</li>
+        <li>reset  : 입력한 값이 재설정된다</li>
+        <li>hidden : 프로그래머가 지정한 ***가 사용자의 눈에는 보이지않지만 전송버튼을 누르면 서버로 전송</li>   
+            
+             <form action="http://localhost/btn.php">
+                <input type="submit" name="" value="submit-입력값전송">
+                <input type="button" name="" value="button-ui만 만듬" onclick="alert('hello world')">
+                <input type="reset" name="" value="reset 재설정" >
+                <input type="hidden" name="hide" value="작성자 김진숙">
+            </form> 
+      
+
+<h2>get/post 파일 업로드하기</h2>
+   <li>파일 업로드시 form teg에서 method="post" enctype="multipart/form-data"로 해줘야한다</li>
+   <li>input file 에서 name은 서버쪽 프로그래머가 원하는 이름을 지정해주어야한다</li>
+  
+    <form class="" action="http://localhost/upload.php" method="post" enctype="multipart/form-data">
+      <input type="file" name="server가요구한name" value="">
+      <input type="submit" name="" value="화일제출">
+    </form>
+
+  </body>
+</html>
